@@ -1,61 +1,45 @@
 sh-4.4$ /bin/bash                                                                                                                                  
 bash-4.4$ mkdir Folder                                                                                                                             
-bash-4.4$ echo date | tee date_A date_B date_C date_D date_E                                                                                       
-date                                                                                                                                               
-bash-4.4$ ls -l                                                                                                                                    
-total 28                                                                                                                                           
-drwxr-xr-x 2 21642 21642 4096 Nov 11 17:21 Folder                                                                                                  
--rw-r--r-- 1 21642 21642  978 Nov 11 17:20 README.txt                                                                                              
--rw-r--r-- 1 21642 21642    5 Nov 11 17:27 date_A                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:27 date_B                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:27 date_C                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:27 date_D                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:27 date_E                                                                                                  
-bash-4.4$ date -u                                                                                                                                  
-Sat Nov 11 17:28:01 UTC 2017                                                                                                                       
+bash: $'\320mkdir': command not found                                                                                                              
+bash-4.4$ mkdir Folder                                                                                                                             
 bash-4.4$ touch date_A                                                                                                                             
 bash-4.4$ touch date_B                                                                                                                             
 bash-4.4$ touch date_C                                                                                                                             
 bash-4.4$ touch date_D                                                                                                                             
 bash-4.4$ touch date_E                                                                                                                             
 bash-4.4$ ls -l                                                                                                                                    
-total 28                                                                                                                                           
-drwxr-xr-x 2 21642 21642 4096 Nov 11 17:21 Folder                                                                                                  
--rw-r--r-- 1 21642 21642  978 Nov 11 17:20 README.txt                                                                                              
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_A                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_B                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_C                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_D                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_E     
-bash-4.4$ for Folder in A B C D E                                                                                                                  
-> do                                                                                                                                               
-> echo date_%Folder                                                                                                                                
-> done                                                                                                                                             
-date_%Folder                                                                                                                                       
-date_%Folder                                                                                                                                       
-date_%Folder                                                                                                                                       
-date_%Folder                                                                                                                                       
-date_%Folder                                                                                                                                       
-bash-4.4$ ls -l                                                                                                                                    
-total 28                                                                                                                                           
-drwxr-xr-x 2 21642 21642 4096 Nov 11 17:21 Folder                                                                                                  
--rw-r--r-- 1 21642 21642  978 Nov 11 17:20 README.txt                                                                                              
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_A                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_B                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_C                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_D                                                                                                  
--rw-r--r-- 1 21642 21642    5 Nov 11 17:28 date_E                                                                                                  
+total 8                                                                                                                                            
+drwxr-xr-x 2 21877 21877 4096 Nov 11 19:11 Folder                                                                                                  
+-rw-r--r-- 1 21877 21877  978 Nov 11 19:10 README.txt                                                                                              
+-rw-r--r-- 1 21877 21877    0 Nov 11 19:13 date_A                                                                                                  
+-rw-r--r-- 1 21877 21877    0 Nov 11 19:13 date_B   
+-rw-r--r-- 1 21877 21877    0 Nov 11 19:13 date_C                                                                                                  
+-rw-r--r-- 1 21877 21877    0 Nov 11 19:13 date_D                                                                                                  
+-rw-r--r-- 1 21877 21877    0 Nov 11 19:13 date_E                                                                                                  
+bash-4.4$ date -u                                                                                                                                  
+Sat Nov 11 19:15:51 UTC 2017                                                                                                                       
 bash-4.4$ echo "date_A date_B date_C date_D date_E tee" | tee date_A date_B date_C date_D date_E                                                   
 date_A date_B date_C date_D date_E tee                                                                                                             
+bash-4.4$ for Folder in A B C D E                                                                                                                  
+> do                                                                                                                                               
+> echo date_ %Folder                                                                                                                               
+> done                                                                                                                                             
+date_ %Folder                                                                                                                                      
+date_ %Folder                                                                                                                                      
+date_ %Folder                                                                                                                                      
+date_ %Folder                                                                                                                                      
+date_ %Folder                                                                                                                                      
+bash-4.4$ date | tee date_A date_B date_C date_D date_E                                                                                            
+Sat Nov 11 19:21:37 UTC 2017                                                                                                                       
 bash-4.4$ ls -l                                                                                                                                    
-total 28 
-drwxr-xr-x 2 21642 21642 4096 Nov 11 17:21 Folder                                                                                                  
--rw-r--r-- 1 21642 21642  978 Nov 11 17:20 README.txt                                                                                              
--rw-r--r-- 1 21642 21642   39 Nov 11 17:31 date_A                                                                                                  
--rw-r--r-- 1 21642 21642   39 Nov 11 17:31 date_B                                                                                                  
--rw-r--r-- 1 21642 21642   39 Nov 11 17:31 date_C                                                                                                  
--rw-r--r-- 1 21642 21642   39 Nov 11 17:31 date_D                                                                                                  
--rw-r--r-- 1 21642 21642   39 Nov 11 17:31 date_E                                                                                                  
-bash-4.4$ cat date* | grep 11 | wc                                                                                                                 
-      0       0       0                     
-bash-4.4$ rm -rf Folder                                          
+total 28                                                                                                                                           
+drwxr-xr-x 2 21877 21877 4096 Nov 11 19:11 Folder                                                                                                  
+-rw-r--r-- 1 21877 21877  978 Nov 11 19:10 README.txt                                                                                              
+-rw-r--r-- 1 21877 21877   29 Nov 11 19:21 date_A                                                                                                  
+-rw-r--r-- 1 21877 21877   29 Nov 11 19:21 date_B                                                                                                  
+-rw-r--r-- 1 21877 21877   29 Nov 11 19:21 date_C                                                                                                  
+-rw-r--r-- 1 21877 21877   29 Nov 11 19:21 date_D                                                                                                  
+-rw-r--r-- 1 21877 21877   29 Nov 11 19:21 date_E                                                                                                  
+bash-4.4$ cat date* | grep 2017 | wc                                                                                                               
+      5      30     145  
+bash-4.4$ rm -rf Folder                                                                                                                            
